@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+//1
 
 
             beaconManager2.setRangingListener(new BeaconManager.RangingListener() {
