@@ -28,7 +28,7 @@ public class InputActivity extends AppCompatActivity {
     private EditText mEditTextAddress;
     private TextView mTextViewResult;
 
-    private EditText mEditTextAge; /**추가*/
+    //private EditText mEditTextAge; /**추가*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,15 +48,15 @@ public class InputActivity extends AppCompatActivity {
 
 
 
-
-
-
-
         mEditTextName = (EditText)findViewById(R.id.editText_main_name);  //이름을 입력하는 뷰
         mEditTextAddress = (EditText)findViewById(R.id.editText_main_address);  //주소를 입력하는 뷰
         mTextViewResult = (TextView)findViewById(R.id.textView_main_result);  //상태를 알려주는 하단 뷰
 
-        mEditTextAge = (EditText)findViewById(R.id.editText_main_age);   /**추가*/ //나이를 입력하는 뷰
+        //mEditTextAge = (EditText)findViewById(R.id.editText_main_age);   /**추가*/ //나이를 입력하는 뷰
+
+
+
+
 
         Button buttonInsert = (Button)findViewById(R.id.button_main_insert);
         buttonInsert.setOnClickListener(new View.OnClickListener() {
@@ -66,15 +66,16 @@ public class InputActivity extends AppCompatActivity {
                 String name = mEditTextName.getText().toString();  // name = 이름 Edit 텍스트에 내용을 객체화시키고 가져와 넣는다.
                 String address = mEditTextAddress.getText().toString();  //address = 주소 Edit 텍스트에 내용을 객체화시키고 가져와 넣는다.
 
-                String age = mEditTextAge.getText().toString(); /**추가*/
+                //String age = mEditTextAge.getText().toString(); /**추가*/
+
 
                 InsertData task = new InsertData();  // InsertData 클래스를 객체화 시킨다 => task 로.
-                task.execute(name,address, age);  /**추가*/ //클래스의 생성자를 실행한다. name, address.
+                task.execute(name,address);  /**추가*/ //클래스의 생성자를 실행한다. name, address.
 
 
                 mEditTextName.setText("");  //이름 비움.
                 mEditTextAddress.setText("");  //주소 비움.
-                mEditTextAge.setText("");
+                //mEditTextAge.setText("");
 
                 Intent intent = new Intent(InputActivity.this, ChatActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -97,8 +98,7 @@ public class InputActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
 
-            progressDialog = ProgressDialog.show(InputActivity.this,
-                    "잠시만 기다려주세요.", null, true, true);
+            //progressDialog = ProgressDialog.show(InputActivity.this, "잠시만 기다려주세요.", null, true, true);
         }
 
 
@@ -106,7 +106,7 @@ public class InputActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
 
-            progressDialog.dismiss();  //프로그래스 다이얼로그를 닫는다.
+            //progressDialog.dismiss();  //프로그래스 다이얼로그를 닫는다.
             mTextViewResult.setText(result);  //상태 텍스트뷰의 내용을 'result' 로 갱신.
             Log.d(TAG, "POST response  - " + result);  //로그 찍음. POST response - SQL문 처리 성공.
         }
@@ -145,10 +145,13 @@ public class InputActivity extends AppCompatActivity {
             String name = (String)params[0];  // 문자열 형태의 name 객체 생성.  (파라미터는 0번)
             String address = (String)params[1];  // 문자열 형태의 address 객체 생성.  (파라미터는 1번)
 
-            String age = (String)params[2];  /**추가*/
+            //String age = (String)params[2];  /**추가*/
 
-            String serverURL = "http://61.99.32.244:8080/insert.php";  // 문자열 형태의 serverURL 내용을 태호 PC 로 했다.
-            String postParameters = "name=" + name + "&address=" + address + "&age=" + age;       /**추가*/ // 요청할 파라미터의 정보를 입력했다.
+            String serverURL =  "http://layup3.cafe24.com/HOMESUL_insert.php"; // 문자열 형태의 serverURL 내용을 태호 PC 로 했다.
+            //String serverURL = "http://61.99.32.244:8080/insert.php";   // 문자열 형태의 serverURL 내용을 태호 PC 로 했다.
+
+
+            String postParameters = "name=" + name + "&address=" + address;       /**추가*/ // 요청할 파라미터의 정보를 입력했다.
             // 문자열 형태의 postParameters 에 ex) name=Teaho , address=Korea 로 했다.
 
 
@@ -215,6 +218,7 @@ public class InputActivity extends AppCompatActivity {
 
         }
 
+
     }
 
 
@@ -232,5 +236,10 @@ public class InputActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

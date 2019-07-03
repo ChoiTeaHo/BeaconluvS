@@ -49,7 +49,11 @@ public class MyApplication extends Application {
         beaconManager.setMonitoringListener(new BeaconManager.MonitoringListener() {
             @Override
             public void onEnteredRegion(Region region, List<Beacon> list) {  //지역(모니터링 된 지역) , List <Beacon> 비콘 (이벤트를 트리거 한 비콘 목록)
-                showNotification("Cheerluv Team 첫 번째 비콘", "게시판 비콘 연결되었습니다." + "연결됬어! " + list.get(0).getRssi());
+                showNotification("Cheerluv Team 첫 번째 비콘", "쿠폰 비콘 연결되었습니다." + "연결됬어! " + list.get(0).getRssi());
+                Intent intent  = new Intent(getApplicationContext(), SplashActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("excuteType", "beacon1");
+                getApplicationContext().startActivity(intent);
             }
 
          //OnExitRegion : 지역에 등록 된 모든 신호가 도달 불능이되었을 때 발생합니다.
@@ -70,7 +74,11 @@ public class MyApplication extends Application {
         beaconManager2.setMonitoringListener(new BeaconManager.MonitoringListener() {
             @Override
             public void onEnteredRegion(Region region2, List<Beacon> list) {  //지역(모니터링 된 지역) , List <Beacon> 비콘 (이벤트를 트리거 한 비콘 목록)
-                showNotification("Cheerluv Team 두 번째 비콘", "개발단계중인 비콘 연결되었습니다." + "연결됬어! " + list.get(0).getRssi());
+                showNotification("Cheerluv Team 두 번째 비콘", "게시판 비콘 연결되었습니다." + "연결됬어! " + list.get(0).getRssi());
+                Intent intent  = new Intent(getApplicationContext(), SplashActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("excuteType", "beacon2");
+                getApplicationContext().startActivity(intent);
             }
 
             //OnExitRegion : 지역에 등록 된 모든 신호가 도달 불능이되었을 때 발생합니다.

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -44,7 +45,10 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-        //=======================================툴바 영역=========================================================================================
+        list = (ListView) findViewById(listView);
+
+
+//=======================================툴바 영역=========================================================================================
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 // Get the ActionBar here to configure the way it behaves.
@@ -54,10 +58,10 @@ public class ChatActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(false); // 뒤로가기 버튼, 디폴트로 true만 해도 백버튼이 생김
 //      actionBar.setHomeAsUpIndicator(R.drawable.button_back); //뒤로가기 버튼을 본인이 만든 아이콘으로 하기 위해 필요
 //=========================================================================================================================================
-        list = (ListView) findViewById(listView);
-        personList = new ArrayList<HashMap<String, String>>();
-        getData("http://61.99.32.244:8080/PHP_connection.php"); /** 태호 PC 서버 */
 
+        personList = new ArrayList<HashMap<String, String>>();
+        //getData("http://61.99.32.244:8080/PHP_connection.php"); /** 태호 PC 서버 */
+        getData("http://layup3.cafe24.com/HOMESUL_connection.php"); /** 태호 PC 서버 */
 
 
 
@@ -82,17 +86,16 @@ public class ChatActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.action_btn1:
-                Intent intent3 = new Intent(ChatActivity.this, InputActivity.class);
-                intent3.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT); /*이전 실행액티비티를 다시 띄울때 액티비트를 다시 시작하는 것 x
+                Intent Client = new Intent(ChatActivity.this, InputActivity.class);
+                Client.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT); /*이전 실행액티비티를 다시 띄울때 액티비트를 다시 시작하는 것 x
                                                                            히스토리 스택에서 해당액티비티를 다시 제일상단으로 재정렬*/
-                startActivity(intent3);
+                startActivity(Client);
                 finish();
         }
         return true;
     }
 //===========================================================================================================================================
-
-    protected void showList() {
+protected void showList() {
     try {
         JSONObject jsonObj = new JSONObject(myJSON);  //제이슨Object 객체 생성 내부에 array 생성자
         peoples = jsonObj.getJSONArray(TAG_RESULTS);
@@ -103,6 +106,7 @@ public class ChatActivity extends AppCompatActivity {
             String id = c.getString(TAG_ID);  // php에서 id 값을 (TAG_ID를 통해) id 스트링객체에 넣는다.
             String name = c.getString(TAG_NAME); // php에서 name 값을 (TAG_name를 통해) name 스트링객체에 넣는다.
             String address = c.getString(TAG_ADD); //php에서 address 값을 (TAG_address를 통해) address 스트링객체에 넣는다.
+            Log.d("tag","이름"+id + "내용"+name);
 
 
 
@@ -114,7 +118,6 @@ public class ChatActivity extends AppCompatActivity {
             persons.put(TAG_ADD, address); // -
 
             personList.add(persons);  //Array객체와 HashMap 객체를 모두 가진 personList에 추가한다.
-
         }
         //여기까지 반복문으로 돌아간다
 
@@ -126,14 +129,12 @@ public class ChatActivity extends AppCompatActivity {
                 new String[]{TAG_ID, TAG_NAME, TAG_ADD}, //String 배열에 id, name, address 그릇 생성
                 new int[]{R.id.id, R.id.name, R.id.address}  //position 은 순서대로 id, name, address
         );
-
         list.setAdapter(adapter); //메인액티비티 listView 내부에 설정한 리스트어댑터 설정
 
 
     } catch (JSONException e) {
         e.printStackTrace();
     }
-
 }
 
 
@@ -206,5 +207,11 @@ public class ChatActivity extends AppCompatActivity {
         }
         GetDataJSON g = new GetDataJSON(); //데이터를 get 객체 생성 후
         g.execute(url); // 실행
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

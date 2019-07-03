@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -16,7 +17,6 @@ public class SplashActivity extends AppCompatActivity {
 
         final String executeType = getIntent().getStringExtra("excuteType");
 
-
         handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -25,12 +25,18 @@ public class SplashActivity extends AppCompatActivity {
                 Intent intent = null;
 
                 //비콘에 의해 실행 또는 일반 실행일때 ACTIVITY 다르게.
-                if(executeType != null && executeType.equals("beacon1")){
-                    intent = new Intent(SplashActivity.this, ChatActivity.class); //비콘에의해 실행
+                if(executeType != null && executeType.equals("beacon1")) {
+                    intent = new Intent(SplashActivity.this, CouponActivity.class); //비콘1에의해
+                    Log.d("TAG", "if실행(beacon1)");
+
+                }else if(executeType != null && executeType.equals("beacon2")){
+                    intent = new Intent(SplashActivity.this, ChatActivity.class); //비콘2에의해 실행
+                    Log.d("TAG", "if실행(beacon1)");
                 }
 
                 else{
                     intent = new Intent(SplashActivity.this, MainActivity.class); //일반실행
+                    Log.d("TAG","else실행");
                 }
 
 

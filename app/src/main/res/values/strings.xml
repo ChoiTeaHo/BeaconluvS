@@ -4,4 +4,11 @@
     <string name="title">타이틀입니다.</string>
     <string name="message">메세지입니다.</string>
     <string name="title_activity_splash">SplashActivity</string>
+
+    <string name="button_board_intro">게시판링크</string>
+    <string name="button_coupone_intro">쿠폰링크</string>
+
+    <string name="nickname">닉네임</string>
+    <string name="nickname_hint">닉네임과 내용 모두 입력하십시오.</string>
+
 </resources>

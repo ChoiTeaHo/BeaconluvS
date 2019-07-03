@@ -42,8 +42,10 @@ public class MainActivity extends AppCompatActivity {
         beaconManager = new BeaconManager(this); //비콘매니저 객체 생성
         beaconManager2 = new BeaconManager(this);
 
+        isConnected = false;
 
-        Button button = (Button) findViewById(R.id.button);
+        Button button = (Button) findViewById(R.id.button1);
+        Button button2 = (Button) findViewById(R.id.button2);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +56,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(MainActivity.this , ChatActivity.class);
+                startActivity(intent2);
+
+            }
+        });
 
 
 
@@ -76,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
                         AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
                         dialog.setTitle("알림")
-                                .setMessage("비콘연결")
+                                .setMessage("쿠폰비콘연결")
                                 .setPositiveButton("확인", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
@@ -84,11 +94,11 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 }).create().show();
 
-                        Intent intent2 = new Intent(MainActivity.this , SplashActivity.class);
-                        intent2.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT); /*이전 실행액티비티를 다시 띄울때 액티비트를 다시시작하는것x
-                                                                                   히스토리 스택에서 해당액티비티를 다시 제일상단으로 재정렬*/
-                        intent2.putExtra("excuteType", "beacon1");
-                        startActivity(intent2);
+                        //Intent intent2 = new Intent(MainActivity.this , SplashActivity.class);
+                        //intent2.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT); /*이전 실행액티비티를 다시 띄울때 액티비트를 다시시작하는것x
+                        //히스토리 스택에서 해당액티비티를 다시 제일상단으로 재정렬*/
+                        //intent2.putExtra("excuteType", "beacon1");
+                        //startActivity(intent2);
                     }
 
                     // 수신강도가 -70 이하일때 알림창을 띄운다.
@@ -115,7 +125,17 @@ public class MainActivity extends AppCompatActivity {
                         // 수신강도가 -70 이상일때 알림창을 띄운다.
                         if (!isConnected && nearestBeacon2.getRssi() > -70) {
                             isConnected = true;
-                            Toast.makeText(MainActivity.this, "두번째비콘 연결완료.", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(MainActivity.this, "두번째비콘 연결완료.", Toast.LENGTH_SHORT).show();
+
+                            AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+                            dialog.setTitle("알림")
+                                    .setMessage("게시판비콘연결")
+                                    .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+
+                                        }
+                                    }).create().show();
                         }
                         // 수신강도가 -70 이하일때 알림창을 띄운다.
                         else if (isConnected && nearestBeacon2.getRssi() < -70) {
