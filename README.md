@@ -22,4 +22,4 @@ You can use messages with correct drinking and bulletin boards.
 
 
 ## Demo  
-<img width="600" height="500" class="spinner" alt="" src="https://user-images.githubusercontent.com/19817832/60798233-b59dad80-a1ab-11e9-8559-23bf1f60deb8.gif"/>
+<img width="600" height="500" class="spinner" alt="" src="https://user-images.githubusercontent.com/19817832/60799429-1928da80-a1ae-11e9-9b26-eb9331f98ee4.gif"/>
