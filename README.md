@@ -36,18 +36,4 @@ The beacon operates as Bluetooth after performing a transmission range (SSID) ch
 <li>beacon2 connection -> Board Page -> insert </li>
 </ul>
 
-# Setup
 
-// Android 디바이스가 Beacon의 송신 범위에 들어가거나 나왔을 때 체크한다.
-        //OnEnterRegion : 등록 된 지역에서 비콘에 처음 도달 가능하게 될 때 발생합니다.
-        beaconManager.setMonitoringListener(new BeaconManager.MonitoringListener() {
-            @Override
-            public void onEnteredRegion(Region region, List<Beacon> list) {  //지역(모니터링 된 지역) , List <Beacon> 비콘 (이벤트를 트리거 한 비콘 목록)
-                showNotification("Cheerluv Team 첫 번째 비콘", "게시판 비콘 연결되었습니다." + "연결됬어! " + list.get(0).getRssi());      
-         //OnExitRegion : 지역에 등록 된 모든 신호가 도달 불능이되었을 때 발생합니다.
-            @Override
-            public void onExitedRegion(Region region) {
-               cancelNotification(); //해제할때 필요
-               /*howNotification("Cheerluv Team", "비콘 해제되었습니다." );*/
-            }
-        });
