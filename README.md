@@ -25,4 +25,7 @@ You can use messages with correct drinking and bulletin boards.
 <img width="600" height="500" alt="" src="https://user-images.githubusercontent.com/19817832/60799429-1928da80-a1ae-11e9-9b26-eb9331f98ee4.gif"/>
 
 <h2>How to use?</h2>
-
+<ul>
+<li>I wrote a very simple example codee</li>
+<li>sample demo</li>
+</ul>
