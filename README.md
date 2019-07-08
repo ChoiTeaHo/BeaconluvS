@@ -6,7 +6,7 @@ beacon2. Board Page
 The beacon operates as Bluetooth after performing a transmission range (SSID) check.  
 
 ## Process
-<img width="600" height="500" alt="" src="https://user-images.githubusercontent.com/19817832/60803404-1631e800-a1b6-11e9-8dba-7a6b9866b404.PNG"/>
+<img width="800" height="400" alt="" src="https://user-images.githubusercontent.com/19817832/60803404-1631e800-a1b6-11e9-8dba-7a6b9866b404.PNG"/>
 
 
 # H/W Model
