@@ -25,15 +25,24 @@ You can use messages with correct drinking and bulletin boards.
 <img width="600" height="500" alt="" src="https://user-images.githubusercontent.com/19817832/60799429-1928da80-a1ae-11e9-9b26-eb9331f98ee4.gif"/>
 
 <h2>How to use?</h2>
-<ul>
-<li>I wrote a very simple example codee</li>
-</ul>
+  
+  
 <img width="600" height="500" alt="" src="https://user-images.githubusercontent.com/19817832/60801866-bab22b00-a1b2-11e9-9452-e36ffbc605d8.gif"/>
 <ul>
 <li>beacon1 connection -> Coupon Page</li>
 </ul>
-
+  
+  
 <img width="600" height="500" alt="" src="https://user-images.githubusercontent.com/19817832/60802230-6c515c00-a1b3-11e9-85a0-4094bdc4c43b.gif"/>
 <ul>
 <li>beacon2 connection -> Board Page</li>
 </ul>
+  
+  
+<img width="600" height="500" alt="" src="https://user-images.githubusercontent.com/19817832/60802230-6c515c00-a1b3-11e9-85a0-4094bdc4c43b.gif"/>
+<ul>
+<li>beacon2 connection -> Board Page</li>
+</ul>
+
+<img width="600" height="500" alt="" src="https://user-images.githubusercontent.com/19817832/60802480-ebdf2b00-a1b3-11e9-85da-7343f3281cd4.gif"/>
+
