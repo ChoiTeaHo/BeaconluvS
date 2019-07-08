@@ -1,6 +1,9 @@
-# Hello, welcome to Homesul
-If you hit the proximity sensor cup, you may feel like drinking alcohol together.
-You can use messages with correct drinking and bulletin boards.
+# Hello, welcome to BeaconLuv
+Various events can be output through the beacon.  
+The serial number of each beacon is registered, and the event according to each beacon is as follows.  
+beacon1. Coupon page  
+beacon2. Board Page  
+The beacon operates as Bluetooth after performing a transmission range (SSID) check.  
 
 ## Process
 * '잔디' 협업툴 사용
