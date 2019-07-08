@@ -39,10 +39,8 @@ You can use messages with correct drinking and bulletin boards.
 </ul>
   
   
-<img width="600" height="500" alt="" src="https://user-images.githubusercontent.com/19817832/60802230-6c515c00-a1b3-11e9-85a0-4094bdc4c43b.gif"/>
-<ul>
-<li>beacon2 connection -> Board Page</li>
-</ul>
-
 <img width="600" height="500" alt="" src="https://user-images.githubusercontent.com/19817832/60802480-ebdf2b00-a1b3-11e9-85da-7343f3281cd4.gif"/>
+<ul>
+<li>beacon2 connection -> Board Page -> insert </li>
+</ul>
 
