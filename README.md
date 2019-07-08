@@ -8,6 +8,9 @@ The beacon operates as Bluetooth after performing a transmission range (SSID) ch
 ## Process
 <img width="800" height="300" alt="" src="https://user-images.githubusercontent.com/19817832/60803728-d0c1ea80-a1b6-11e9-992b-61f5c3a4dfdd.png"/>
 
+<img width="800" height="300" alt="" src="https://user-images.githubusercontent.com/19817832/60808987-85163d80-a1c4-11e9-8488-b7372322168d.PNG"/>
+
+
 
 # H/W Model
 <img width="600" height="400" alt="" src="https://user-images.githubusercontent.com/19817832/60803214-b0456080-a1b5-11e9-816c-77eb4df0cbfc.png"/>
