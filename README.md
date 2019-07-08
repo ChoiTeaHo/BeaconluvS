@@ -31,3 +31,7 @@ You can use messages with correct drinking and bulletin boards.
 </ul>
 <img width="600" height="500" alt="" src="https://user-images.githubusercontent.com/19817832/60801866-bab22b00-a1b2-11e9-9452-e36ffbc605d8.gif"/>
 
+
+<img width="600" height="500" alt="" src="https://user-images.githubusercontent.com/19817832/60802230-6c515c00-a1b3-11e9-85a0-4094bdc4c43b.gif"/>
+
+
